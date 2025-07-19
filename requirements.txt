@@ -1,10 +1,8 @@
-Python = 3.13
-
-pip install streamlit
-pip install pandas
-pip install torch
-pip install transformers
-pip install scikit-learn
-pip install openpyxl
-pip install matplotlib
+streamlit
+pandas
+torch
+transformers
+scikit-learn
+openpyxl
+matplotlib
 
