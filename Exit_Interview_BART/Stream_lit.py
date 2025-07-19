@@ -10,8 +10,8 @@ from io import BytesIO
 @st.cache_resource
 def load_model():  # 3 main things Model, Model Path and Tokenizer
     model_path = "./Exit_interview_bart_Model"
-    model = BartForSequenceClassification.from_pretrained(model_path)
-    tokenizer = BartTokenizer.from_pretrained(model_path)
+    model = BartForSequenceClassification.from_pretrained(model_path, local_files_only = True)
+    tokenizer = BartTokenizer.from_pretrained(model_path, local_files_only = True)
     with open(f'{model_path}/label_encoder.pkl', 'rb') as f:
         le = pickle.load(f)
     return model, tokenizer, le
