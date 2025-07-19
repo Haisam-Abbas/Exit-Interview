@@ -5,7 +5,9 @@ Hello! I'm Haisam Abbas. The main goal for this project is to create a tool for 
 
 I believe this tool gives the most value to individuals in consultancy or HR departments in medium to large organizations which deal with copious amounts of unstructured data and legacy systems / processes which have no formal standard. Although it can be helpful to almost anyone.
 
-I used a Zero Shot Facebook/BART model and then finetuned it on a data set of around 2500 exit interviews. The data set was created by using a mix of LLM's, research into the leading causes of employee resignations as well as real life exit interview comments all tied together. It process exit comments and classifies them into one of 13 categories:
+I used a Zero Shot Facebook/BART model and then finetuned it on a data set of around 2500 rich exit interviews. The data set was created by using a mix of LLM's, research into the leading causes of employee resignations as well as real life exit interview comments.
+
+The model process exit comments and classifies them into one of 13 categories:
 
     "0": "Career change",
     "1": "Entrepreneurship",
@@ -24,5 +26,5 @@ I used a Zero Shot Facebook/BART model and then finetuned it on a data set of ar
 
 Upon testing the model it gives an labelling accuracy of around 75% - 80%. At its current state it may struggle differentiating between overlapping topics such as Limited work-life balance and Heavy workload / Burnout but scores very high on other stand alone topics such as Relocation, Further Education and Management or leadership issues. Please do validate the end results. ( Maybe in the next iteration I will condense the labels)
 
-This model was my first project relating to Machine Learning and I benefited a lot from opensource materials and code on GitHub and Stack Overflow as well as YouTube tutorials and AI agents.
+This model was my first project relating to Machine Learning and I benefited a lot from opensource materials, code on GitHub and Stack Overflow as well as YouTube tutorials and AI agents.
 Being a self taught student of programming I am always looking forward to opportunities to learn. Any feedback is much appreciated!. 
