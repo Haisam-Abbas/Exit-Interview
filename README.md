@@ -7,6 +7,8 @@ I believe this tool gives the most value to individuals in consultancy or HR dep
 
 I used a Zero Shot Facebook/BART model and then finetuned it on a data set of around 2500 rich exit interviews. The data set was created by using a mix of LLM's, research into the leading causes of employee resignations as well as real life exit interview comments.
 
+The model itself is stored on Hugging Face and can be found at : https://huggingface.co/HaisamAbbas1/Exit_Interview . But the GitHub contains the script required for an easy plug and play.
+
 The model process exit comments and classifies them into one of 13 categories:
 
     "0": "Career change",
