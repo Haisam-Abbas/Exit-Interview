@@ -2,6 +2,7 @@ import torch
 import pandas as pd
 import pickle
 from transformers import BartTokenizer, BartForSequenceClassification
+from huggingface_hub import hf_hub_download
 
 # Somethings to make sure before you start running this script
 # You should have the above modules installed so python can import them.
@@ -11,14 +12,16 @@ from transformers import BartTokenizer, BartForSequenceClassification
 # Exit Interview comments should be in a seperate column called:  Response
 # Your analyzed Excel file will be called : Exit_Interviews_Analyzed
 
+HF_REPO = "HaisamAbbas1/Exit_Interview"
 
-model_path = "./exit_interview_bart_model"
-model = BartForSequenceClassification.from_pretrained(model_path)
-tokenizer = BartTokenizer.from_pretrained(model_path)
-
-
-with open(f"{model_path}/label_encoder.pkl", "rb") as f:
+# Download label encoder from Hugging Face
+label_encoder_path = hf_hub_download(HF_REPO, filename="label_encoder.pkl")
+with open(label_encoder_path, "rb") as f:
     le = pickle.load(f)
+
+# Load model and tokenizer directly from HF
+model = BartForSequenceClassification.from_pretrained(HF_REPO)
+tokenizer = BartTokenizer.from_pretrained(HF_REPO)
 
 # Checks if your GPU is being loaded or not. Despite having one if it defaults to CPU there may be issues with your installed torch version.
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -31,8 +34,6 @@ print(f"Using device: {device}")
 df = pd.read_excel("Exit_Interviews_Data.xlsx")
 
 #  Function to predict for a single text
-
-
 def predict_category(text):
     inputs = tokenizer(
         text,
@@ -51,7 +52,6 @@ def predict_category(text):
         probs = torch.softmax(logits, dim=1)[0]
         confidence = probs[pred_label].item()
     return pred_category, confidence
-
 
 # Run predictions
 predicted_categories = []
@@ -75,5 +75,5 @@ with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
     df.to_excel(writer, sheet_name="Classified_Data", index=False)
     summary.to_excel(writer, sheet_name="Category_Summary", index=False)
 
-print(f" Predictions and summary saved to '{output_file}'")
+print(f"Predictions and summary saved to '{output_file}'")
 print(f"Labels used: {list(le.classes_)}")
