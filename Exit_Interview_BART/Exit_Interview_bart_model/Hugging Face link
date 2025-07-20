@@ -1,0 +1,15 @@
+Download the Model from Hugging Face
+
+The large model file is not included in this repository. I tried putting the safetensors here but it was giving me errors. 
+
+You can download it directly from Hugging Face:
+
+**Model page:**  
+https://huggingface.co/HaisamAbbas1/Exit_Interview
+
+**To download with Python:**
+python
+
+from huggingface_hub import hf_hub_download
+
+
