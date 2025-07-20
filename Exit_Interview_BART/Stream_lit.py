@@ -5,14 +5,14 @@ import pickle
 from transformers import BartTokenizer, BartForSequenceClassification
 import matplotlib.pyplot as plt
 from io import BytesIO
-
+import os
 
 @st.cache_resource
-def load_model():  # 3 main things Model, Model Path and Tokenizer
-    model_path = "Exit_Interview_bart_model"
+def load_model():
+    model_path = os.path.abspath("./Exit_Interview_bart_model")  # ensures absolute path
     model = BartForSequenceClassification.from_pretrained(model_path)
     tokenizer = BartTokenizer.from_pretrained(model_path)
-    with open(f'{model_path}/label_encoder.pkl', 'rb') as f:
+    with open(os.path.join(model_path, 'label_encoder.pkl'), 'rb') as f:
         le = pickle.load(f)
     return model, tokenizer, le
 
