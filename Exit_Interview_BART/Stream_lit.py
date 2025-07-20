@@ -27,7 +27,7 @@ model, tokenizer, le = load_model()
 
 
 # need to check f4r device: PyTorch twrking overtime
-device = torch.device("cuda" if torch.cuda.is_available() else "CPU")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 model.eval()
 st.success(f'Using Device: {device}')
