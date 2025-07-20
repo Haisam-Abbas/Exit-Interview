@@ -50,7 +50,7 @@ with st.expander("📘 What This Model Does"):
     -  Analyzes each comment using natural language processing (NLP)
     -  Predicts the **most likely reason** for the employee's departure
     -  Provides a confidence score for each prediction
-    -  Summarizes the results with interactive visualizations and downloadable reports
+    -  Summarizes the results with interactive visualizations and downloadable reports.
     
     ---
 
