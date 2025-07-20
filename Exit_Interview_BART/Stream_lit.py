@@ -9,7 +9,7 @@ import os
 
 @st.cache_resource
 def load_model():
-    model_path = os.path.abspath("haisam-abbas/exit-interview/main/Exit_Interview_BART/Exit_Interview_bart_model")  # ensures absolute path
+    model_path = os.path.abspath("Exit-Interview")  # ensures absolute path
     model = BartForSequenceClassification.from_pretrained(model_path)
     tokenizer = BartTokenizer.from_pretrained(model_path)
     with open(os.path.join(model_path, 'label_encoder.pkl'), 'rb') as f:
