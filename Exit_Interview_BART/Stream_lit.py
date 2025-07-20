@@ -5,14 +5,18 @@ import pickle
 from transformers import BartTokenizer, BartForSequenceClassification
 import matplotlib.pyplot as plt
 from io import BytesIO
+from huggingface_hub import hf_hub_download
+
+HF_REPO_ID = "HaisamAbbas1/Exit_Interview"
 
 
 @st.cache_resource
 def load_model():  # 3 main things Model, Model Path and Tokenizer
-    model_path = "./Exit_interview_bart_Model"
-    model = BartForSequenceClassification.from_pretrained(model_path)
-    tokenizer = BartTokenizer.from_pretrained(model_path)
-    with open(f'{model_path}/label_encoder.pkl', 'rb') as f:
+    model = BartForSequenceClassification.from_pretrained(HF_REPO_ID)
+    tokenizer = BartTokenizer.from_pretrained(HF_REPO_ID)
+    label_path = hf_hub_download(
+        repo_id=HF_REPO_ID, filename='label_encoder.pkl')
+    with open(label_path, 'rb') as f:
         le = pickle.load(f)
     return model, tokenizer, le
 
