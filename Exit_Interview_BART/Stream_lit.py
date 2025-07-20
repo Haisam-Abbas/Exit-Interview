@@ -9,7 +9,7 @@ from io import BytesIO
 
 @st.cache_resource
 def load_model():  # 3 main things Model, Model Path and Tokenizer
-    model_path = "Exit_Interview_BART/Exit_interview_bart_Model"
+    model_path = "./Exit_Interview_BART/Exit_interview_bart_Model"
     model = BartForSequenceClassification.from_pretrained(model_path)
     tokenizer = BartTokenizer.from_pretrained(model_path)
     with open(f'{model_path}/label_encoder.pkl', 'rb') as f:
