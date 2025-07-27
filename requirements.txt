@@ -5,4 +5,4 @@ transformers
 scikit-learn
 openpyxl
 matplotlib
-
+huggingface_hub[hf_xet]
