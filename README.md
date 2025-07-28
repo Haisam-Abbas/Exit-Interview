@@ -28,5 +28,7 @@ The model process exit comments and classifies them into one of 13 categories:
 
 Upon testing the model it gives an labelling accuracy of around 75% - 80%. At its current state it may struggle differentiating between overlapping topics such as Limited work-life balance and Heavy workload / Burnout but scores very high on other stand alone topics such as Relocation, Further Education and Management or leadership issues. Please do validate the end results. ( Maybe in the next iteration I will condense the labels)
 
+Try the model online: https://exit-interview-analysis-machine-learning.streamlit.app/
+
 This model was my first project relating to Machine Learning and I benefited a lot from opensource materials, code on GitHub and Stack Overflow as well as YouTube tutorials and AI agents.
 Being a self taught student of programming I am always looking forward to opportunities to learn. Any feedback is much appreciated!. 
