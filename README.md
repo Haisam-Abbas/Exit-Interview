@@ -1,7 +1,7 @@
 # Exit-Interview
 A Natural Language Processing BART model trained to classify exit interviews into 13 distinct categories.
 
-Hello! I'm Haisam Abbas. The main goal for this project is to create a tool for aiding HR Analytics specifically uncovering the reasons behind employee attrition. 
+Hello! I'm Haisam Abbas. The main goal for this project is to create a tool for aiding HR Analytics specifically uncovering the reasons behind employee resignations. 
 
 I believe this tool gives the most value to individuals in consultancy or HR departments in medium to large organizations which deal with copious amounts of unstructured data and legacy systems / processes which have no formal standard. Although it can be helpful to almost anyone.
 
